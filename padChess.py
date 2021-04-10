@@ -15,6 +15,8 @@ import lichess.api as lichess
 import asyncio
 from lichess_client import APIClient
 
+from config import lichessToken
+
 import threading
 import json
 
@@ -74,7 +76,7 @@ def animateLastMove(lp, moves):
 
 async def asyncEventGet(lp):
 	global currentGameId
-	client = APIClient(token="***REMOVED***")
+	client = APIClient(token=lichessToken)
 	async for response in client.boards.stream_incoming_events():
 		
 		jsonString = response.entity.content
