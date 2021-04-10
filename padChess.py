@@ -94,7 +94,7 @@ async def asyncEventGet(lp):
 
 async def asyncGameEventGet(lp):
 	global currentGameId
-	client = APIClient(token="***REMOVED***")
+	client = APIClient(token=lichessToken)
 	while 1:
 		# asking each half second for a game id seams to be good enough
 		time.wait(500)
